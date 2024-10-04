@@ -6,7 +6,8 @@ MAGENTA_BOLD=\033[1;35m
 BRANCO_BOLD=\033[1;37m
 NC=\033[0m
 SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
-OBJS = $(SRCS:%.cpp=%.o)
+OBJ_DIR = obj
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
 all: $(NAME)
 
@@ -14,15 +15,20 @@ $(NAME): $(OBJS)
 	@$(CXX) $(CXXFLAGS) -s -o $(NAME) $(OBJS)
 	@echo "\n$(MAGENTA_BOLD)- Compilation of all files is complete -$(NC)\n"
 
+
+$(OBJ_DIR)/%.o: %.cpp
+	@mkdir -p $(OBJ_DIR)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
+
 %.o: %.cpp
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJ_DIR)
 	@echo "\n$(BRANCO_BOLD)- Cleaned all program files -$(NC)\n"
 
 fclean: clean
-	@rm -f $(OBJS) $(NAME)
+	@rm -f $(NAME)
 	@echo "\n$(BRANCO_BOLD)- ALL files have been cleaned -$(NC)\n"
 
 re: fclean all

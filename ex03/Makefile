@@ -1,11 +1,11 @@
-NAME = zombieHorde
+NAME = unnecessary_violence
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 MAGENTA=\033[0;35m
 MAGENTA_BOLD=\033[1;35m
 BRANCO_BOLD=\033[1;37m
 NC=\033[0m
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 OBJ_DIR = obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
 
