@@ -6,14 +6,14 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 15:16:42 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/04 17:08:53 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/04 18:33:05 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#define ZOMBIE_HPP
 
-# include <iostream>
+#include <iostream>
 
 /* Colors */
 #define RESET   "\033[0m"
@@ -30,9 +30,9 @@ public:
 	Zombie(std::string name);
 	~Zombie();
 	void announce( void );
+	void set_name(std::string name);
 };
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+Zombie* zombieHorde( int N, std::string name );
 
 #endif // ZOMBIE_HPP

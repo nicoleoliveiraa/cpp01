@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 15:35:19 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/04 18:38:23 by nsouza-o         ###   ########.fr       */
+/*   Created: 2024/10/04 16:48:35 by nsouza-o          #+#    #+#             */
+/*   Updated: 2024/10/04 18:39:32 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int main()
 {
-	Zombie* myZombie = newZombie("Mortis");
+	int nbrOfZumbies = 7;
+	Zombie* myHorde = zombieHorde(nbrOfZumbies, "Mortis");
 
-	randomChump("Magnus");
-	myZombie->announce();
-	delete myZombie;
-	return (0);
+	for(int i = 0; i < nbrOfZumbies; ++i)
+		myHorde[i].announce();
+	delete[] myHorde;
 }
