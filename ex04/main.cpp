@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 20:12:15 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/05 14:02:05 by nsouza-o         ###   ########.fr       */
+/*   Created: 2024/10/07 10:29:00 by nsouza-o          #+#    #+#             */
+/*   Updated: 2024/10/07 11:29:43 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
 
-Weapon::Weapon()
+int main(int argc, char **argv)
 {
-	return ;
-}
-
-Weapon::Weapon(std::string type)
-{
-	this->type = type;
-	return ;
-}
-
-Weapon::~Weapon()
-{
-	return ;
-}
-
-const std::string& Weapon::getType() const
-{
-	return (this->type);
-}
-
-void Weapon::setType(std::string type)
-{
-	this->type = type;
+	std::ifstream inFile;
+	std::ofstream outFile;
+	std::string line;
+	
+	if (argc != 4)
+		return (0);
+	inFile.open("text");
+	if (!inFile.good())
+	{
+		std::cerr << "Error: Can't open inFile." << std::endl;
+		return (1);
+	}
+	while (getline(inFile, line))
+		replaceAndWrite(line)
 }

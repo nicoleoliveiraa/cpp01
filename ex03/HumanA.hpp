@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 20:24:02 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/04 21:15:44 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/05 14:20:41 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ private:
 	HumanA();
 
 public:
-	HumanA(std::string name, Weapon weapon);
+	HumanA(std::string name, Weapon& weapon);
 	~HumanA();
 	void attack();
 };
